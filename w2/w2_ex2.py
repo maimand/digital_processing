@@ -3,21 +3,22 @@ from scipy.io.wavfile import write
 import matplotlib.pyplot as plt
 
 fs = 10000
-samplerate1 = 2.5*fs
-samplerate2 = 1.5*fs
+samplerate1 = 3*fs
+samplerate2 = int(1.5*fs)
 
-t = np.linspace(0., 5., fs)
+t1 = np.linspace(0., 5., samplerate1)
+t2 = np.linspace(0., 5., samplerate2)
 
 amplitude = 10
 
-data1 = amplitude * np.sin(2. * np.pi * samplerate1 * t)
+data1 = amplitude * np.sin(2. * np.pi * samplerate1 * t1)
 
-data2 = amplitude * np.sin(2. * np.pi * samplerate2 * t)
+data2 = amplitude * np.sin(2. * np.pi * samplerate2 * t2)
 
 fig, axs = plt.subplots(2)
-axs[0].plot(t, data1)
-axs[0].set_title('f1 = 2.5x')
-axs[1].plot(t, data2)
+axs[0].stem(t1, data1)
+axs[0].set_title('f1 = 3x')
+axs[1].stem(t2, data2)
 axs[1].set_title('f2 = 1.5x')
 
 plt.show()

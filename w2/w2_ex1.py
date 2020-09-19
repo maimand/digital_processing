@@ -2,10 +2,10 @@ import numpy as np
 from scipy.io.wavfile import write, read
 import matplotlib.pyplot as plt
 
-samplerate, data = read('.\Sample\lab_female.wav')  
+samplerate, data = read('lab_female.wav')  
 
 length = data.shape[0] / samplerate
-
+print(data.shape)
 print('length in sample: ' + str(data.shape[0]))
 length = data.shape[0] / samplerate
 print('length in second: ' + str(length))
