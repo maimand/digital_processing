@@ -2,13 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 index = np.arange(0,21)
-
+#theta x[n]
 x1 = np.zeros(21)
 x1[0] = 1
-
+#theta x[n-4]
 x2 = np.zeros(21)
 x2[4] = 1
-
+#y[n] = n/(n+1)*y + x1[n]
 y11 = np.zeros(21)
 for i in range(0,21):
     y11[i] = i/(i+1) * y11[i-1] + x1[i]
@@ -29,7 +29,7 @@ for i in range(0,21):
 
 
 fig, axs = plt.subplots(4)
-axs[0].stem(index, y11)
+axs[0].stem(index, "index", y11, "y")
 axs[0].set_title('y11')
 axs[1].stem(index, y12)
 axs[1].set_title('y12')
