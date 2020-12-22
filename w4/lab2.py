@@ -3,7 +3,7 @@ import cv2 as cv
 from scipy import signal
 #read an image in gray scale
 img = cv.imread('Lenna_(test_image).png', cv.IMREAD_GRAYSCALE)
-
+print(img)
 kernel = np.ones(5, np.float32) / 5
 #do conv for rows
 img1 = []
@@ -13,7 +13,7 @@ for i in range(img[0].size):
     img1.append(temp)
 
 img1 = np.asarray(img1, np.uint8)
-
+print(img1)
 # do conv for columns
 #transpose image
 img = img.T

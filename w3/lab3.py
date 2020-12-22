@@ -29,7 +29,7 @@ for i in range(0,21):
 
 
 fig, axs = plt.subplots(4)
-axs[0].stem(index, "index", y11, "y")
+axs[0].stem(index, y11)
 axs[0].set_title('y11')
 axs[1].stem(index, y12)
 axs[1].set_title('y12')
